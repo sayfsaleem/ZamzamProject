@@ -1,0 +1,93 @@
+{% extends "Header.html" %}
+{% block Content %}
+{% load static %}
+<main>
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area bg-default" data-background="assets/img/breadcrumb/breadcrumb-bg.jpg">
+<img alt="" class="breadcrumb-shape" src="{% static 'assets/img/breadcrumb/shape-1.png' %}"/>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="breadcrumb-content">
+<h2 class="breadcrumb-title">Course Archive</h2>
+<div class="breadcrumb-list">
+<a href=" /">Home</a>
+<span>Course</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- breadcrumb area end -->
+<!-- course area start -->
+<section class="innerPage_course-area pt-120 pb-90">
+<div class="container">
+<div class="innerPage_course-top mb-30">
+<div class="row justify-content-between align-items-center">
+<div class="col-xl-4 col-md-4">
+<div class="innerPage_course-left mb-20">
+<p>Top Dynamic Courses</p>
+</div>
+</div>
+<div class="col-xl-8 col-md-8">
+<div class="innerPage_course-right mb-20">
+
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+    {% for course in data %}
+<div class="col-xxl-3 col-lg-4 col-md-6">
+<div class="course-item mb-30">
+<div class="course-img">
+<img alt="" src="/media/{{course.course_image}}"/>
+</div>
+<div class="course-content">
+<div class="course-content-top">
+</div>
+<h5 class="course-content-title"><a href="/course/{{course.id}}">{{course.course_name}}</a></h5>
+<div class="course-content-bottom">
+<div class="course-bottom-info">
+</div>
+<div class="course-bottom-price">
+<a class="header-btn theme-btn theme-btn-medium" href="/course/{{course.id}}">View Course</a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+
+</div>
+
+</div>
+</section>
+<!-- course area end -->
+<!-- cta area start -->
+<div class="cta-area">
+<div class="container">
+<div class="cta-wrapper">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="cta-content mb-30 mb-lg-0">
+<span class="cta-subtitle">Contact Us</span>
+<h2 class="cta-title">You want to Contact Us?</h2>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6">
+<div class="cta-button">
+<a class="cta-btn" href="#"><i class="fa-brands fa-apple"></i>Contact Us</a>
+<a class="cta-btn" href="#"><i class="fa-brands fa-google-play"></i>Whatsapp</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- cta area end -->
+</main>
+   {% endblock Content %}

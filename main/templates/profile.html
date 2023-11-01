@@ -1,0 +1,128 @@
+{% extends "Header.html" %}
+{% block Content %}
+{% load static %}
+<main>
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area bg-default" data-background="{% static 'assets/img/breadcrumb/breadcrumb-bg.jpg' %}">
+<img alt="" class="breadcrumb-shape" src="{% static 'assets/img/breadcrumb/shape-1.png' %}"/>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="breadcrumb-content">
+<h2 class="breadcrumb-title">Hi,We hope you're doing great</h2>
+<div class="breadcrumb-list">
+<a href="/">Home</a>
+<span>Proile</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- breadcrumb area end -->
+<!-- teacher details area start -->
+<section class="teacher_details-area pt-120 pb-60">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-5">
+<div class="teacher_details-img w_img mb-50">
+<img alt="" src="/media/{{student.student_image}}"/>
+</div>
+</div>
+<div class="col-lg-8 col-md-7">
+<div class="teacher_details-content mb-50">
+<div class="teacher_details-admin">
+<h4 class="teacher_details-title">{{request.user.username}}</h4>
+{% if not student.course %}
+ <span>Enroll Into Top Course</span>
+ <button class="account-btn"><a href='/'>Browse Course</a></button>
+{% else %}
+<span>Current Course : {{student.course}}</span>
+{% endif %}
+</div>
+
+<h5 class="teacher_details-title2">Current Progress</h5>
+{% if not student.course %}
+<p class="mb-20">Look like you're lonely here, Enroll in Any Course and Get Progression</p></div>
+{% else %}
+<p class="mb-20">{{student.current_remarks}}</p></div>
+{% endif %}
+</div>
+</div>
+</div>
+</section>
+<!-- teacher details area end -->
+<!-- course area start -->
+<section class="course-area pb-90">
+<div class="container">
+<div class="row">
+<div class="col-xl-12">
+<div class="course-section-area">
+<div class="section-area section-area-top">
+<h2 class="section-title mb-50">Your Current OnGoing Course</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+    {% if student.course %}
+        <div class="col-xl-4 col-lg-6 col-md-6">
+<div class="h2_course-item mb-30">
+<div class="h2_course-item-img">
+<a href="course-details.html"><img alt="" src="/media/{{student.course.course_image}}"/></a>
+</div>
+<div class="h2_course-content">
+
+<h5 class="h2_course-content-title"><a href="course-details.html">{{student.course.course_name}}</a></h5>
+<div class="h2_course-content-info">
+<span>{{student.course.lessons}} Lessons</span>
+<span>{{student.course.weeks}} weeks Timeline</span>
+</div>
+<div class="h2_course-content-author">
+<div class="h2_course-author-img">
+<img alt="" src="/media/{{teacher.teacher_image}}"/>
+</div>
+<div class="h2_course-author-info">
+<span>By <a>{{teacher.name}}</a></span>
+</div>
+</div>
+</div>
+<div class="h2_course-content-bottom">
+<div class="h2_course-bottom-btn">
+<a href="/course/{{student.course.id}}">View Course<i class="fa-light fa-arrow-right"></i><i class="fa-light fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+    {% else %}
+
+    {% endif %}
+</div>
+</div>
+</section>
+<!-- course area end -->
+<!-- cta area start -->
+<div class="cta-area">
+<div class="container">
+<div class="cta-wrapper">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="cta-content mb-30 mb-lg-0">
+<span class="cta-subtitle">Contact Us</span>
+<h2 class="cta-title">You want to Contact Us?</h2>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6">
+<div class="cta-button">
+<a class="cta-btn" href="#"><i class="fa-brands fa-apple"></i>Contact Us</a>
+<a class="cta-btn" href="#"><i class="fa-brands fa-google-play"></i>Whatsapp</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- cta area end -->
+</main>
+<!-- footer area start -->
+{% endblock Content %}

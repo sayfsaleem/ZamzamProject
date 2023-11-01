@@ -1,0 +1,577 @@
+
+{% extends "Header.html" %}
+{% block Content %}
+{% load static %}
+<!-- header area end -->
+<main>
+<!-- banner area start -->
+<section class="banner-area">
+<div class="single-banner container-fluid container-custom-1 p-0">
+<img alt="" class="banner-top-shape-1" src="{% static 'assets/img/banner/1/1.png' %}"/>
+<img alt="" class="banner-top-shape-2" src="{% static 'assets/img/banner/1/3.png' %}"/>
+<img alt="" class="banner-top-shape-3" src="{% static 'assets/img/banner/1/5.png' %}"/>
+<div class="container">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-5 col-md-8">
+<div class="banner-content">
+<div class="section-area">
+<span class="section-subtitle">ZamZam Online Academy </span>
+<h1 class="section-title">Master the Faith, Embrace   <span>Quran, <img alt="" src="{% static 'assets/img/banner/1/line.png' %}"/></span>Illuminate Your Journey.</h1>
+<p class="section-text">Through a combination of lectures, readings, and discussions, students <br/> will gain a solid foundation in Religious Knowledge.</p>
+<a class="theme-btn theme-btn-big" href="/courses/">View All Course</a>
+</div>
+</div>
+</div>
+<div class="col-xl-6 col-lg-7 d-none d-lg-block">
+<div class="banner-right">
+<div class="banner-img">
+<img alt="" src="{% static 'assets/img/banner/1/banner1.png' %}"/>
+</div>
+<div class="banner-meta">
+<div class="banner-inner-meta banner-meta-info">
+<img alt="" class="inner-img" src="{% static 'assets/img/banner/1/info_icon.png' %}"/>
+<div class="banner-inner-info">
+<div class="banner-info-img">
+<img alt="" src="https://alqalamonlinequranacademy.com/wp-content/uploads/2020/09/quranbook.jpg"/>
+<span class="banner-info-icon">Stars</span>
+</div>
+<div class="banner-info-text">
+<h5>Holy Prophet PBHU said</h5>
+<p>“The best among you (Muslims)  <br/> are those who learn the Qur'an . <br/> and teach it  - [صحيح] - [رواه البخاري]”.</p>
+</div>
+</div>
+</div>
+<div class="banner-inner-meta banner-meta-rating">
+<span>StarsFact of the Day</span>
+<h5>“Quran Is The Key”</h5>
+</div>
+</div>
+<div class="banner-right-shape">
+<img alt="" class="banner-shape-1" src="{% static 'assets/img/banner/1/shape_1.png' %}"/>
+<img alt="" class="banner-shape-2" src="{% static 'assets/img/banner/1/2.png' %}"/>
+<img alt="" class="banner-shape-4" src="{% static 'assets/img/banner/1/4.png' %}"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- banner area end -->
+<!-- brand area start -->
+<div class="brand-area pt-115">
+<div class="container">
+<div class="row">
+<div class="col-xl-12">
+<div class="brand-content">
+<h5>Our Most Students Are From</h5>
+</div>
+</div>
+</div>
+<div class="brand-wrap">
+<div class="brand-active swiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<div class="brand-item">
+<a href="#">
+<h5>United Arab Emirites 🇦🇪</h5>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="brand-item">
+<a href="#">
+<h5>QATAR 🇶🇦</h5>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="brand-item">
+<a href="#">
+<h5>United Kingdom 🇬🇧</h5>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="brand-item">
+<a href="#">
+<h5>Jordan 🇯🇴</h5>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="brand-item">
+<a href="#">
+<h5>America 🇺🇸</h5>
+</a>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="brand-item">
+<a href="#">
+<h5>Canada 🇨🇦</h5>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- brand area end -->
+<!-- category area start -->
+<section class="category-area pt-120 pb-60">
+<div class="container">
+<div class="row">
+<div class="col-xl-3 col-lg-3">
+<div class="category-left pb-60">
+<div class="section-area">
+<span class="section-subtitle">Browse Courses</span>
+<h2 class="section-title mb-20">Our Popular Courses</h2>
+</div>
+<div class="category-navigation">
+<div class="category-prev"><i class="fa-thin fa-arrow-left"></i>
+</div>
+<div class="category-next"><i class="fa-light fa-arrow-right"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-9 col-lg-9">
+<div class="category-wrap">
+<div class="category-shape">
+<img alt="" class="category-shape-1" src="{% static 'assets/img/category/1/shape-1.png' %}"/>
+<img alt="" class="category-shape-2" src="{% static 'assets/img/category/1/shape-2.png' %}"/>
+<img alt="" class="category-shape-3" src="{% static 'assets/img/category/1/shape-3.png' %}"/>
+<img alt="" class="category-shape-4" src="{% static 'assets/img/category/1/shape-4.png' %}"/>
+</div>
+<div class="category-active swiper pb-60">
+<div class="swiper-wrapper">
+    {% for course in courses %}
+        <div class="swiper-slide">
+<div class="category-item">
+<div class="category-img">
+<img alt="" src="/media/{{course.course_image}}"/>
+</div>
+<div class="category-content">
+<h5><a href="/course/{{course.id }}">{{course.course_name}}</a></h5>
+<a class="header-btn theme-btn theme-btn-medium" href="/course/{{course.id }}">Enroll Now</a>
+<p>
+<a href="/course/{{course.id }}">{{course.price}} Dirham/Monthly</a>
+
+</p>
+</div>
+</div>
+</div>
+    {% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- category area end -->
+<!-- course area start -->
+<section class="course-area">
+<div class="container-fluid container-custom-1 p-0">
+<div class="course-wrap pt-120 pb-90">
+<div class="container">
+<div class="row">
+<div class="col-xl-12">
+<div class="course-section-area text-center">
+<div class="section-area section-area-top">
+<span class="section-subtitle">Featured Courses</span>
+<h2 class="section-title mb-20">Explore Featured Courses</h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="course-inner">
+<div class="tab-content" id="pills-tabContent">
+<div aria-labelledby="pills-home-tab" class="tab-pane fade show active" id="pills-home" role="tabpanel" tabindex="0">
+<div class="row">
+    {% for course in courses %}
+<div class="col-xxl-3 col-lg-4 col-md-6">
+<div class="course-item mb-30">
+<div class="course-img">
+<img alt="" src="{{course.course_image.url}}"/>
+</div>
+
+<div class="course-content">
+<div class="course-content-top">
+<div class="course-top-icon">⭐</div>
+<div class="course-top-title">
+<h6>Featured By ZamZam ⭐</h6>
+</div>
+</div>
+<h5 class="course-content-title"><a href="#">{{course.course_name}}</a></h5>
+<div class="course-content-bottom">
+
+<div class="course-bottom-price">
+<span  id="discountedPrice"><span  id="originalPrice"><a class="header-btn theme-btn theme-btn-medium" href="/course/{{course.id}}">View Now</a>
+</span></span>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+    {% endfor %}
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- course area end -->
+<!-- about area start -->
+<section class="about-area pt-140 pb-90">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="about-img mb-50">
+<img alt="" src="https://blog.uaalim.com/wp-content/uploads/2015/11/shutterstock_294688259.jpg"/>
+<div class="about-img-meta">
+<span>5 Stars (3.4k Reviews)</span>
+<h5>Congratulations</h5>
+</div>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-10">
+<div class="about-content mb-50">
+<div class="section-area mb-20">
+<span class="section-subtitle">All Quranic Studies in One Place</span>
+<h2 class="section-title mb-15">Empower Your Child's Faith, Embrace Quran, Illuminate Their Path.</h2>
+<p class="section-text">
+                                    Through a combination of Engaging Lectures, Inspiring Events, and Spiritual Guidance.
+                                </p>
+</div>
+<div class="about-content-list">
+<ul>
+<li>International courses collection in 14 languages</li>
+<li>Top certifications</li>
+<li>Access to top Religious courses, anytime, anywhere</li>
+</ul>
+</div>
+<div class="about-content-button">
+<a class="theme-btn about-btn theme-btn-medium" href="about.html">More Details</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+
+            <!-- Question 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answer1"
+                        aria-expanded="true" aria-controls="answer1">
+                        How old do I have to be to take an online class?
+                    </button>
+                </h2>
+                <div id="answer1" class="accordion-collapse collapse show" aria-labelledby="question1"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        There is no age limit for taking classes. All ages are welcome to register for the classes or courses they
+                        want to take.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer2"
+                        aria-expanded="false" aria-controls="answer2">
+                        How many classes can I take?
+                    </button>
+                </h2>
+                <div id="answer2" class="accordion-collapse collapse" aria-labelledby="question2" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        It all depends on how much the students can handle. We have recommended days and duration for each course.
+                        Of course, it can be reduced or even increased.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer3"
+                        aria-expanded="false" aria-controls="answer3">
+                        How do I enroll and register?
+                    </button>
+                </h2>
+                <div id="answer3" class="accordion-collapse collapse" aria-labelledby="question3" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Just click on the Enroll button and you will be redirected to a form, in which you can fill out details and then
+                        you will shortly be contacted by an agent.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class "accordion-item">
+                <h2 class="accordion-header" id="question4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer4"
+                        aria-expanded="false" aria-controls="answer4">
+                        What if I change my mind and want to drop my class?
+                    </button>
+                </h2>
+                <div id="answer4" class="accordion-collapse collapse" aria-labelledby="question4" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        If you wish to change/drop classes, you are most welcome to get in contact with the admin assigned to you and let them know at least a week beforehand in order to save any inconveniences.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer5"
+                        aria-expanded="false" aria-controls="answer5">
+                        What are the technical requirements for an online course?
+                    </button>
+                </h2>
+                <div id="answer5" class="accordion-collapse collapse" aria-labelledby="question5" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The only technical requirements that are required is the know-how to use Zoom Application.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer6"
+                        aria-expanded="false" aria-controls="answer6">
+                        What do I do if I need technical assistance?
+                    </button>
+                </h2>
+                <div id="answer6" class="accordion-collapse collapse" aria-labelledby="question6" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Contact Us at zamzamacademy2023@gmail.com or +971-58-589-4795. Only call.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer7"
+                        aria-expanded="false" aria-controls="answer7">
+                        How do I get access to the class materials?
+                    </button>
+                </h2>
+                <div id="answer7" class="accordion-collapse collapse" aria-labelledby="question7" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The teacher will be providing you with all the standard materials needed for class. Other than that you can head to our downloads section, and download the materials as needed.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer8"
+                        aria-expanded="false" aria-controls="answer8">
+                        How much does an online class cost?
+                    </button>
+                </h2>
+                <div id="answer8" class="accordion-collapse collapse" aria-labelledby="question8" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Head over to our Courses page where there is a list of courses and their fee mentioned.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question9">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer9"
+                        aria-expanded="false" aria-controls="answer9">
+                        When do I have to pay?
+                    </button>
+                </h2>
+                <div id="answer9" class="accordion-collapse collapse" aria-labelledby="question9" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Payment for classes is paid in advance, but can be catered to the needs of the student.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question10">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer10"
+                        aria-expanded="false" aria-controls="answer10">
+                        What are acceptable payment methods?
+                    </button>
+                </h2>
+                <div id="answer10" class="accordion-collapse collapse" aria-labelledby="question10" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We are currently accepting payment by credit/debit card, PayPal, and direct deposit.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- about area end -->
+<!-- event area start -->
+<section class="event-area">
+<img alt="" class="event-bg-img" src="https://as1.ftcdn.net/v2/jpg/02/69/30/58/1000_F_269305852_3SAcGxC9xMrynjKgJL8JI25zxiyzf68Y.jpg"/>
+<div class="event-wrap pt-120 pb-40">
+<div class="container">
+<div class="row align-items-center mb-30">
+<div class="col-xl-8 col-lg-8 col-md-8">
+<div class="event-section-area mb-20">
+<div class="section-area">
+<span class="section-subtitle">Events on Religious Education</span>
+<h2 class="section-title mb-0">Upcoming Events</h2>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-4">
+<div class="event-navigation mb-30">
+<div class="event-prev"><i class="fa-thin fa-arrow-left"></i>
+</div>
+<div class="event-next"><i class="fa-light fa-arrow-right"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="event-active swiper pb-80">
+<div class="swiper-wrapper">
+    {% for event in events %}
+<div class="swiper-slide">
+<div class="event-item">
+<div class="event-img">
+<a href="event.html"><img alt="" src="{{event.picture.url}}"/></a>
+</div>
+<div class="event-content">
+<div class="event-content-meta">
+<span><i class="fa-thin fa-location-dot"></i>{{event.location}}/span>
+<span><i class="fa-thin fa-clock"></i>{{event.time}}</span>
+</div>
+<h5 class="event-content-title"><a>{{event.title}}</a></h5>
+<a class="t-theme-btn theme-btn event-btn" href="{{event.link}}">Join Now</a>
+</div>
+</div>
+</div>
+  {% endfor %}
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- event area end -->
+<!-- testimonial area start -->
+
+<!-- testimonial area end -->
+<!-- counter area start -->
+<div class="counter-area">
+<div class="container">
+<div class="counter-wrap">
+<div class="row g-0">
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+<div class="counter-item">
+<div class="counter-icon">
+</div>
+<div class="counter-info">
+<h3 class="counter-info-title">
+<span class="odometer count_one" data-count="34">00</span>
+<span>k</span>
+</h3>
+<span class="counter-info-text">Foreign Students</span>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+<div class="counter-item">
+<div class="counter-icon">
+
+</div>
+<div class="counter-info">
+<h3 class="counter-info-title">
+<span class="odometer count_one" data-count="12">00</span>
+<span>k</span>
+</h3>
+<span class="counter-info-text">Classes complete</span>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+<div class="counter-item">
+<div class="counter-icon">
+
+</div>
+<div class="counter-info">
+<h3 class="counter-info-title">
+<span class="odometer count_one" data-count="214">00</span>
+<span>k</span>
+</h3>
+<span class="counter-info-text">Students Enrolled</span>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+<div class="counter-item">
+<div class="counter-icon">
+
+</div>
+<div class="counter-info">
+<h3 class="counter-info-title">
+<span class="odometer count_one" data-count="56">00</span>
+<span>k</span>
+</h3>
+<span class="counter-info-text"> Religious Certified teachers</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- counter area end -->
+<!-- blog area start -->
+
+<!-- blog area end -->
+<!-- cta area start -->
+<div class="cta-area">
+<div class="container">
+<div class="cta-wrapper">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="cta-content mb-30 mb-lg-0">
+<span class="cta-subtitle">Contact Us</span>
+<h2 class="cta-title">You want to Contact Us?</h2>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6">
+<div class="cta-button">
+<a class="cta-btn" href="#"><i class="fa-brands fa-apple"></i>Contact Us</a>
+<a class="cta-btn" href="#"><i class="fa-brands fa-google-play"></i>Whatsapp</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- cta area end -->
+</main>
+<!-- footer area start -->
+
+{% endblock Content %}

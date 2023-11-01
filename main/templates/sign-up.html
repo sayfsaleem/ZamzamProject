@@ -1,0 +1,125 @@
+{% extends "Header.html" %}
+{% block Content %}
+{% load static %}
+
+   <main>
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area bg-default" data-background="assets/img/breadcrumb/breadcrumb-bg.jpg">
+<img alt="" class="breadcrumb-shape" src="{% static 'assets/img/breadcrumb/shape-1.png' %}"/>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="breadcrumb-content">
+<h2 class="breadcrumb-title">Sign Up</h2>
+<div class="breadcrumb-list">
+<a href=" /">Home</a>
+<span>Sign Up</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- breadcrumb area end -->
+<!-- sign up area start -->
+<div class="account-area pt-120 pb-120">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-xl-7 col-lg-8 col-md-10">
+<div class="account-wrap">
+<div class="account-top sign-up">
+<div class="account-top-current">
+<span>Sign Up</span>
+</div>
+<div class="account-top-link">
+<a href="/login/">Sign In</a>
+</div>
+</div>
+<div class="account-main">
+<h3 class="account-title">Sign in to Your Account 👋</h3>
+<form method='post' class="account-form">
+   {% csrf_token %}
+<div class="account-form-item mb-20">
+<div class="account-form-label">
+<label>First Name</label>
+</div>
+<div class="account-form-input">
+<input name='first_name' placeholder="First Name" type="text"/>
+</div>
+</div>
+<div class="account-form-item mb-20">
+<div class="account-form-label">
+<label>Last Name</label>
+</div>
+<div class="account-form-input">
+<input name='last_name' placeholder="Last Name" type="text"/>
+</div>
+</div>
+<div class="account-form-item mb-20">
+<div class="account-form-label">
+<label>Your Email</label>
+</div>
+<div class="account-form-input">
+<input name='email' placeholder="Enter Your Email" type="email"/>
+</div>
+</div>
+<div class="account-form-item mb-15">
+<div class="account-form-input account-form-input-pass">
+<input name='password' placeholder="*********" type="text"/>
+<span><i class="fa-thin fa-eye"></i></span>
+</div>
+</div>
+<div class="account-form-condition">
+<label class="condition_label">Remember Me
+                                                <input type="checkbox"/>
+<span class="check_mark"></span>
+</label>
+</div>
+<div class="account-form-button">
+<button class="account-btn" type="submit">Sign Up</button>
+</div>
+</form>
+<div class="account-break">
+<span>OR</span>
+</div>
+<div class="account-bottom">
+<div class="account-bottom-text">
+<p>Already have an account ? <a href="/login/">Sign In for here</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- sign up area end -->
+<!-- cta area start -->
+<div class="cta-area">
+<div class="container">
+<div class="cta-wrapper">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="cta-content mb-30 mb-lg-0">
+<span class="cta-subtitle">Contact Us</span>
+<h2 class="cta-title">You want to Contact Us?</h2>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6">
+<div class="cta-button">
+<a class="cta-btn" href="#"><i class="fa-brands fa-apple"></i>Contact Us</a>
+<a class="cta-btn" href="#"><i class="fa-brands fa-google-play"></i>Whatsapp</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- cta area end -->
+</main>
+
+
+
+
+    <!-- footer area start -->
+   {% endblock Content %}

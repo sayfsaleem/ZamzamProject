@@ -1,0 +1,123 @@
+{% extends "Header.html" %}
+{% block Content %}
+{% load static %}
+
+   <main>
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area bg-default" data-background="assets/img/breadcrumb/breadcrumb-bg.jpg">
+<img alt="" class="breadcrumb-shape" src="{% static 'assets/img/breadcrumb/shape-1.png' %}"/>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="breadcrumb-content">
+<h2 class="breadcrumb-title">Sign Up</h2>
+<div class="breadcrumb-list">
+<a href="/">Home</a>
+<span>We Need little more Information</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- breadcrumb area end -->
+<!-- sign up area start -->
+<div class="account-area pt-120 pb-120">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-xl-7 col-lg-8 col-md-10">
+<div class="account-wrap">
+<div class="account-top sign-up">
+<div class="account-top-current">
+<span>Hang Tight,We need somemore info.</span>
+</div>
+<div class="account-top-link">
+<a href="">Student Profile Creation</a>
+</div>
+</div>
+<div class="account-main">
+<h3 class="account-title">Making Up Stuff For Your Student Profile 👋</h3>
+<form method='post' class="account-form">
+    {% csrf_token %}
+<div class="account-form-item mb-20">
+<div class="account-form-label">
+<label>Picture</label>
+</div>
+<div class="account-form-input">
+<input name='student_image' type="file" required/>
+</div>
+</div>
+<div class="account-form-item mb-20">
+<div class="account-form-label">
+<label>Age</label>
+</div>
+<div class="account-form-input">
+<input name='age' required type="number"/>
+</div>
+</div>
+<div class="account-form-item mb-20">
+<div class="account-form-label">
+<label>Language</label>
+</div>
+<div class="account-form-input">
+<input name='Teacher_language' required placeholder="English,French,Arabic" type="text"/>
+</div>
+</div>
+<div class="account-form-item mb-20">
+<div class="account-form-label">
+<label>Time When You're Available in a Day (US TIME)</label>
+</div>
+<div class="account-form-input">
+<input name='start_time' required type="time"/>
+</div>
+</div>
+<div class="account-form-item mb-20">
+<div class="account-form-label">
+<label>Time When You're not Available in a Day (US TIME)</label>
+</div>
+<div class="account-form-input">
+<input name='end_time' required type="time"/>
+</div>
+</div>
+<div class="account-form-button">
+<button class="account-btn" type="submit">Sign Up</button>
+</div>
+</form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- sign up area end -->
+<!-- cta area start -->
+<div class="cta-area">
+<div class="container">
+<div class="cta-wrapper">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="cta-content mb-30 mb-lg-0">
+<span class="cta-subtitle">Contact Us</span>
+<h2 class="cta-title">You want to Contact Us?</h2>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6">
+<div class="cta-button">
+<a class="cta-btn" href="#"><i class="fa-brands fa-apple"></i>Contact Us</a>
+<a class="cta-btn" href="#"><i class="fa-brands fa-google-play"></i>Whatsapp</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- cta area end -->
+</main>
+
+
+
+
+    <!-- footer area start -->
+   {% endblock Content %}

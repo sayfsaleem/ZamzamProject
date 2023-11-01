@@ -1,0 +1,297 @@
+{% extends "Header.html" %}
+{% block Content %}
+{% load static %}
+<!-- header area end -->
+<main>
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area bg-default" data-background="assets/img/breadcrumb/breadcrumb-bg.jpg" style="margin: -70px;">
+<img alt="" class="breadcrumb-shape" src="{% static 'assets/img/breadcrumb/shape-1.png' %}"/>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="breadcrumb-content">
+<h2 class="breadcrumb-title">{{course.course_name}}</h2>
+<div class="breadcrumb-list">
+<a href=" /">Home</a>
+<span>Course Details</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- breadcrumb area end -->
+<!-- course details area start -->
+<section class="course_details-area pt-120 pb-60">
+<div class="container" >
+<div class="course_details-img">
+<img alt="" src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cXVyYW58ZW58MHx8MHx8fDA%3D"/>
+</div>
+<div class="row">
+<div class="col-xl-8 col-lg-8">
+<div class="course_details-wrap mb-55">
+<div class="course_details-top mb-60">
+<h3 class="course_details-title">{{course.course_name}}</h3>
+<div class="course_details-meta">
+<div class="course_details-meta-left">
+<div class="course_details-author">
+<div class="course_details-author-img">
+<img alt="" src="/media/{{teacher.teacher_image}}"/>
+</div>
+<div class="course_details-author-info">
+<span>Teacher</span>
+<h5><a href="team.html">{{teacher.name}}</a></h5>
+</div>
+</div>
+<div class="course_details-category">
+<span>Categories</span>
+<h5><a href="#">{{course.course_name}}</a></h5>
+</div>
+</div>
+<div class="course_details-meta-right">
+   {% if user.is_authenticated %}
+        {% if student.paid %}
+<span><a class="header-btn theme-btn theme-btn-medium" href="{{sylabus.zoom_link}}">Join now At {{date.time}}</a></span>
+{% else %}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><a class="theme-btn theme-btn-medium">Enroll Now</a></button>
+{% endif %}
+{% else %}
+<span><a class="header-btn theme-btn theme-btn-medium" href="/signup/">Sign Up to Join Now</a></span>
+{% endif %}
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Account Holder Name : RIZWANA ASIF <br>
+        IBAN Number : AE440240077580227281301<br>
+        Account Number : 07758022728130<br>
+        Bank Name  : Dubai Islamic Bank <br><br><br>
+        after Payment : Message Us With Screenshot on <a targt='_blank' href='https://wa.me/+971562579164'>Whatsapp (Click Here)</a>
+       <a class="header-btn theme-btn theme-btn-medium" href="https://secure.telr.com/gateway/ql/FZConsultancyFZE_16450.html?">Online Payment Gatewa -Easiest</a></span>
+      </h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+</div>
+<div class="course_details-tab-button">
+<ul class="nav nav-pills" id="pills-tab" role="tablist">
+<li class="nav-item" role="presentation">
+<button aria-controls="pills-home" aria-selected="true" class="nav-link active" data-bs-target="#pills-home" data-bs-toggle="pill" id="pills-home-tab" role="tab" type="button"><i class="fa-solid fa-bookmark"></i><span>Overview</span></button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="pills-profile" aria-selected="false" class="nav-link" data-bs-target="#pills-profile" data-bs-toggle="pill" id="pills-profile-tab" role="tab" type="button"><i class="fa-thin fa-box"></i><span>Curriculum</span></button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="pills-contact" aria-selected="false" class="nav-link" data-bs-target="#pills-contact" data-bs-toggle="pill" id="pills-contact-tab" role="tab" type="button"><i class="fa-thin fa-user"></i><span>Instructor</span></button>
+</li>
+<li class="nav-item" role="presentation">
+<button aria-controls="pills-four" aria-selected="false" class="nav-link" data-bs-target="#pills-four" data-bs-toggle="pill" id="pills-four-tab" role="tab" type="button"><i class="fa-thin fa-message-dots"></i><span>Reviews</span></button>
+</li>
+</ul>
+</div>
+<div class="course_details-tab-content">
+<div class="tab-content" id="pills-tabContent">
+<div aria-labelledby="pills-home-tab" class="tab-pane fade show active" id="pills-home" role="tabpanel" tabindex="0">
+<div class="course_details-content">
+<h4 class="course_details-content-title mb-15">Courses Description - What You'll learn here</h4>
+{{course.brief | safe}}
+</div>
+</div>
+<div aria-labelledby="pills-profile-tab" class="tab-pane fade" id="pills-profile" role="tabpanel" tabindex="0">
+<div class="course_details-curriculum">
+<h4 class="course_details-content-title mb-15">Course Curriculum</h4>
+<p class="mb-25"> Our Quranic religious studies curriculum is designed to provide students with a deep understanding of the Quran's teachings, stories, and moral lessons. Students will engage in Quranic recitation, Arabic language study, and explore the interpretation of key Quranic chapters (Tafsir). In addition to building a strong foundation in Quranic knowledge, the curriculum emphasizes the practical application of Islamic ethics in daily life and encourages critical thinking about contemporary issues from an Islamic perspective. This comprehensive course aims to develop well-rounded individuals with a strong connection to the Quran and a deep understanding of their faith.</p>
+<div class="accordion" id="Expp">
+    {% for sylabus in syllabus %}
+    <div class="accordion-item">
+<h2 class="accordion-header" id="headingOne">
+<button aria-controls="collapseOne" aria-expanded="true" class="accordion-button" data-bs-target="#collapseOne" data-bs-toggle="collapse" type="button">
+                                                                {{sylabus.title}}
+                                                            </button>
+</h2>
+<div aria-labelledby="headingOne" class="accordion-collapse collapse show" data-bs-parent="#Expp" id="collapseOne">
+<div class="accordion-body">
+<ul>
+<li>
+<a href="#"><i class="fa-brands fa-youtube"></i>{{sylabus.date}}</a>
+{% if user.is_authenticated %}
+        {% if student.paid %}
+<span><a class="header-btn theme-btn theme-btn-medium" href="{{sylabus.zoom_link}}">Join now At  {{syllabus.time}}</a></span>
+{% else %}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><a class="theme-btn theme-btn-medium">Enroll Now</a></button>
+{% endif %}
+{% else %}
+<span><a class="header-btn theme-btn theme-btn-medium" href="/signup/">Sign Up to Join Now</a></span>
+{% endif %}
+</li>
+</ul>
+</div>
+</div>
+</div>
+    {% endfor %}
+
+</div>
+</div>
+</div>
+<div aria-labelledby="pills-contact-tab" class="tab-pane fade" id="pills-contact" role="tabpanel" tabindex="0">
+<div class="course_details-instructor">
+<div class="course_details-thumbnail w_img">
+<img alt="team images" src="/media/{{teacher.teacher_image}}"/>
+</div>
+<div class="course_details-author-content">
+<h6 class="course_details-author-title">{{teacher.name}}</h6>
+<span class="course_details-author-subtitle">Experianced Religious Teacher</span>
+<p>{{teacher.Bio}}</p>
+</div>
+</div>
+</div>
+<div aria-labelledby="pills-four-tab" class="tab-pane fade" id="pills-four" role="tabpanel" tabindex="0">
+<div class="course_details-review">
+<h4 class="course_details-review-title">Student Ratings &amp; Reviews</h4>
+<div class="course_details-review-wrap">
+<div class="row d-flex align-items-center">
+<div class="col-md-4 col-sm-4">
+<div class="course_details-review-left">
+<h5>5.0 Stars</h5>
+<p>(4 Reviews)</p>
+</div>
+</div>
+<div class="col-md-8 col-sm-8">
+<div class="course_details-review-content">
+<ul>
+<li>
+<span class="review-rating">5 Stars</span>
+<span class="review-progress-bar"></span>
+<span class="review-rating-count">1</span>
+</li>
+<li>
+<span class="review-rating">4 Stars</span>
+<span class="review-progress-bar"></span>
+<span class="review-rating-count">3</span>
+</li>
+<li>
+<span class="review-rating">5 Stars</span>
+<span class="review-progress-bar"></span>
+<span class="review-rating-count">0</span>
+</li>
+<li>
+<span class="review-rating">5 Stars</span>
+<span class="review-progress-bar"></span>
+<span class="review-rating-count">0</span>
+</li>
+<li>
+<span class="review-rating">5 Stars</span>
+<span class="review-progress-bar"></span>
+<span class="review-rating-count">0</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4">
+<div class="course_details-sidebar mb-60">
+<div class="course_details-price">
+<h2>{{course.price}} AED</h2>
+</div>
+<div class="course_details-list">
+<ul>
+<li>
+<span><i class="fa-thin fa-clock"></i>Duration</span>
+<span>{{course.weeks}}</span>
+</li>
+<li>
+<span><i class="fa-thin fa-user-group"></i>Students</span>
+<span>354</span>
+</li>
+<li>
+<span><i class="fa-thin fa-file-lines"></i>Lessons</span>
+<span>{{course.lessons}}</span>
+</li>
+<li>
+<span><i class="fa-thin fa-chart-line-up"></i>Skill Level</span>
+<span>Beginner</span>
+</li>
+<li>
+<span><i class="fa-thin fa-language"></i>Language</span>
+<span>{{course.language}}</span>
+</li>
+<li>
+<span><i class="fa-thin fa-user"></i>Instructor</span>
+<span>{{teacher.name}}</span>
+</li>
+<li>
+<span><i class="fa-thin fa-percent"></i>Pass Percentage</span>
+<span>90%</span>
+</li>
+</ul>
+<div class="course_details-sidebar-btn">
+{% if user.is_authenticated %}
+        {% if student.paid %}
+
+<span><a class="header-btn theme-btn theme-btn-medium" href="{{sylabus.zoom_link}}">Join now At  {{date.time}}</a></span>
+{% else %}
+
+<button type="button" class="course-btn theme-btn theme-btn-big" data-toggle="modal" data-target="#exampleModal"><a class="theme-btn theme-btn-medium">Enroll Now</a></button>
+{% endif %}
+{% else %}
+<span><a class="course-btn theme-btn theme-btn-big" href="/signup/">Sign Up to Join Now</a></span>
+{% endif %}
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- course details area end -->
+<!-- cta area start -->
+<div class="cta-area">
+<div class="container">
+<div class="cta-wrapper">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="cta-content mb-30 mb-lg-0">
+<span class="cta-subtitle">Contact Us</span>
+<h2 class="cta-title">You want to Contact Us?</h2>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6">
+<div class="cta-button">
+<a class="cta-btn" href="#"><i class="fa-brands fa-apple"></i>Contact Us</a>
+<a class="cta-btn" href="#"><i class="fa-brands fa-google-play"></i>Whatsapp</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- cta area end -->
+</main>
+<!-- footer area start -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock Content %}

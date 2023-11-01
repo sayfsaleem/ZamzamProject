@@ -1,0 +1,299 @@
+{% extends "Header.html" %}
+{% block Content %}
+{% load static %}
+<main>
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area bg-default" data-background="{% static 'assets/img/breadcrumb/breadcrumb-bg.jpg' %}">
+<img alt="" class="breadcrumb-shape" src="{% static 'assets/img/breadcrumb/shape-1.png' %}"/>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="breadcrumb-content">
+<h2 class="breadcrumb-title">Contact Us</h2>
+<div class="breadcrumb-list">
+<a href="index.html">Home</a>
+<span>Contact Us</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- breadcrumb area end -->
+<!-- contact area start -->
+<section class="contact-area pt-120 pb-120">
+<div class="container">
+<div class="contact-wrap">
+<div class="row">
+<div class="col-xl-8 col-md-8">
+<div class="contact-content pr-80 mb-20">
+<h3 class="contact-title mb-25">Send Message to Us</h3>
+<form method='post' class="contact-form">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+<div class="contact-form-input mb-30">
+<input placeholder="Your Name" name='name' type="text"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+<div class="contact-form-input mb-30">
+<input placeholder="Email Address" name='email' type="email"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+<div class="contact-form-input mb-30">
+<input placeholder="Your Number" name='number' type="text"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+<div class="contact-form-input">
+<select class="contact-form-list has-nice-select mb-30" name="subject">
+<option value="Subject">Select Subject</option>
+<option value="Refund">Refund</option>
+<option value="Payments">Payments</option>
+<option value="Courses">Courses</option>
+<option value="complaint">Complaint</option>
+</select>
+</div>
+</div>
+<div class="col-12">
+<div class="contact-form-input mb-50 contact-form-textarea">
+<textarea cols="30" name="message" placeholder="Feel free to get in touch!" rows="10"></textarea>
+</div>
+</div>
+<div class="col-12">
+<div class="contact-form-submit mb-30">
+<div class="contact-form-btn">
+<button class="account-btn" type="submit">Sign Up</button>
+</div>
+<div class="contact-form-condition">
+<label class="condition_label">I agree that my data is collected and stored.
+                                                            <input type="checkbox"/>
+<span class="check_mark"></span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div class="col-xl-4 col-md-4">
+<div class="contact-info ml-50 mb-20">
+<h3 class="contact-title mb-40">Get In Touch</h3>
+<div class="contact-info-item">
+<span><i class="fa-thin fa-location-dot"></i>Address</span>
+<p>Sharjah Research Technology and Innovation Park</p>
+</div>
+<div class="contact-info-item">
+<span><i class="fa-thin fa-mobile-notch"></i>Phone</span>
+<a href="tel:+123548645850">+971 56 257 9164</a>
+</div>
+<div class="contact-info-item">
+<span><i class="fa-thin fa-envelope"></i>Email</span>
+<a href="mailto:example@gmail.com">zamzamacademy2023@gmail.com</a>
+</div>
+<div class="contact-social">
+<span>Social Media</span>
+<ul>
+<li><a href="https://wa.me/+971562579164?"><i class="fa-brands fa-whatsapp"></i></a></li>
+<li><a href="www.facebook.com/zamzamonlineacademy"><i class="fa-brands fa-facebook-f"></i></a></li>
+<li><a href="www.Instagram.com/zamzamacademy_ae"><i class="fa-brands fa-instagram"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="contact-map">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14425.868996503576!2d55.488302!3d25.3220974!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5df14e533d%3A0x73cc61cd6d65a7e3!2sSharjah%20Research%20Technology%20and%20Innovation%20Park!5e0!3m2!1sen!2s!4v1698836045549!5m2!1sen!2s"></iframe>
+</div>
+</section>
+<!-- contact area end -->
+<!-- cta area start -->
+<div class="cta-area">
+<div class="container">
+<div class="cta-wrapper">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="cta-content mb-30 mb-lg-0">
+<span class="cta-subtitle">Help</span>
+<h2 class="cta-title">You Need Help ?</h2>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6">
+<div class="cta-button">
+<a class="cta-btn" href="#"><i class="fa-brands fa-apple"></i>Whatsapp</a>
+<a class="cta-btn" href="#"><i class="fa-brands fa-google-play"></i>Contact Now</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+
+            <!-- Question 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answer1"
+                        aria-expanded="true" aria-controls="answer1">
+                        How old do I have to be to take an online class?
+                    </button>
+                </h2>
+                <div id="answer1" class="accordion-collapse collapse show" aria-labelledby="question1"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        There is no age limit for taking classes. All ages are welcome to register for the classes or courses they
+                        want to take.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer2"
+                        aria-expanded="false" aria-controls="answer2">
+                        How many classes can I take?
+                    </button>
+                </h2>
+                <div id="answer2" class="accordion-collapse collapse" aria-labelledby="question2" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        It all depends on how much the students can handle. We have recommended days and duration for each course.
+                        Of course, it can be reduced or even increased.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer3"
+                        aria-expanded="false" aria-controls="answer3">
+                        How do I enroll and register?
+                    </button>
+                </h2>
+                <div id="answer3" class="accordion-collapse collapse" aria-labelledby="question3" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Just click on the Enroll button and you will be redirected to a form, in which you can fill out details and then
+                        you will shortly be contacted by an agent.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class "accordion-item">
+                <h2 class="accordion-header" id="question4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer4"
+                        aria-expanded="false" aria-controls="answer4">
+                        What if I change my mind and want to drop my class?
+                    </button>
+                </h2>
+                <div id="answer4" class="accordion-collapse collapse" aria-labelledby="question4" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        If you wish to change/drop classes, you are most welcome to get in contact with the admin assigned to you and let them know at least a week beforehand in order to save any inconveniences.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer5"
+                        aria-expanded="false" aria-controls="answer5">
+                        What are the technical requirements for an online course?
+                    </button>
+                </h2>
+                <div id="answer5" class="accordion-collapse collapse" aria-labelledby="question5" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The only technical requirements that are required is the know-how to use Zoom Application.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer6"
+                        aria-expanded="false" aria-controls="answer6">
+                        What do I do if I need technical assistance?
+                    </button>
+                </h2>
+                <div id="answer6" class="accordion-collapse collapse" aria-labelledby="question6" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Contact Us at zamzamacademy2023@gmail.com or +971-58-589-4795. Only call.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer7"
+                        aria-expanded="false" aria-controls="answer7">
+                        How do I get access to the class materials?
+                    </button>
+                </h2>
+                <div id="answer7" class="accordion-collapse collapse" aria-labelledby="question7" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The teacher will be providing you with all the standard materials needed for class. Other than that you can head to our downloads section, and download the materials as needed.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer8"
+                        aria-expanded="false" aria-controls="answer8">
+                        How much does an online class cost?
+                    </button>
+                </h2>
+                <div id="answer8" class="accordion-collapse collapse" aria-labelledby="question8" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Head over to our Courses page where there is a list of courses and their fee mentioned.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question9">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer9"
+                        aria-expanded="false" aria-controls="answer9">
+                        When do I have to pay?
+                    </button>
+                </h2>
+                <div id="answer9" class="accordion-collapse collapse" aria-labelledby="question9" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Payment for classes is paid in advance, but can be catered to the needs of the student.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question10">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer10"
+                        aria-expanded="false" aria-controls="answer10">
+                        What are acceptable payment methods?
+                    </button>
+                </h2>
+                <div id="answer10" class="accordion-collapse collapse" aria-labelledby="question10" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We are currently accepting payment by credit/debit card, PayPal, and direct deposit.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- cta area end -->
+</main>
+<!-- footer area start -->
+{% endblock Content%}
